@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <h3>{frontmatter.date}</h3>
+  <ol>
+    <li>{frontmatter.linkOneText}</li>
+    <li>{frontmatter.linkTwoText}</li>
+    <li>{frontmatter.linkThreeText}</li>
+    <li>{frontmatter.linkFourText}</li>
+    <li>{frontmatter.linkFiveText}</li>
+  </ol>
+  <p>Quote of the Week: <q><i>{frontmatter.quote}</i></q></p>
+  <p>— {frontmatter.quote_author}</p>
+  {
+    frontmatter.quote.bonus !== undefined ? (
+      <p>Bonus: {frontmatter.quote.bonus}</p>
+    ) : null
+  }
+  <slot />
+</BaseLayout>

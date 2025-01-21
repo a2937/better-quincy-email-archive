@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SentEmailLink from '../components/SentEmailLink.astro';
+
+const emails = await getCollection('email');
+const pageTitle = 'Quincy Email Archive';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>This is the collection of all emails Quincy has sent</p>
+  <ul>
+    {
+      emails.map((post: any) => (
+        <SentEmailLink url={`${post.id}/`} date={post.data.date} />
+      ))
+    }
+  </ul>
+</BaseLayout>

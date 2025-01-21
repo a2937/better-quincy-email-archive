@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand color palette */
+    --brand-gray-00: #ffffff;
+    --brand-gray-05: #f5f6f7;
+    --brand-gray-10: #dfdfe2;
+    --brand-gray-15: #d0d0d5;
+    --brand-gray-45: #858591;
+    --brand-gray-75: #3b3b4f;
+    --brand-gray-80: #2a2a40;
+    --brand-gray-85: #1b1b32;
+    --brand-gray-90: #0a0a23;
+
+    --brand-purple-light: #dbb8ff;
+    --brand-purple-dark: #5a01a7;
+
+    --brand-yellow-light: #f1be32;
+    --brand-yellow-dark: #4d3800;
+
+    --brand-blue-light: #99c9ff;
+    --brand-blue-dark: #002ead;
+
+    --brand-green-light: #acd157;
+    --brand-green-dark: #00471b;
+
+    --brand-theme-color: #0a0a23;
+    --brand-yellow-gold: #ffbf00;
+    /* Brand color palette */
+  }
+}
+
+@layer components {
+  .sl-link-button.primary {
+    background-color: #feac32 !important;
+    background-image: linear-gradient(#fecc4c, #ffac33) !important;
+    border: 3px solid #feac32 !important;
+    color: #0a0a23 !important;
+    text-align: center !important;
+  }
+}

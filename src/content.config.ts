@@ -10,10 +10,9 @@ const email = defineCollection({
     linkOneText: z.string(),
     linkTwoText: z.string(),
     linkThreeText: z.string(),
-    linkFourText: z.string(),
-    linkFiveText: z.string(),
-    quote: z.string(),
-    quote_author: z.string(),
+    linkFourText: z.string().optional(),
+    linkFiveText: z.string().optional(),
+    weekContent: z.string().optional(),
     bonus: z.string().optional()
   })
 });

@@ -9,15 +9,22 @@ const { frontmatter } = Astro.props;
     <li>{frontmatter.linkOneText}</li>
     <li>{frontmatter.linkTwoText}</li>
     <li>{frontmatter.linkThreeText}</li>
-    <li>{frontmatter.linkFourText}</li>
-    <li>{frontmatter.linkFiveText}</li>
+    {
+      frontmatter.linkFourText !== undefined ? (
+        <li>{frontmatter.linkFourText}</li>
+      ) : null
+    }
+    {
+      frontmatter.linkFiveText !== undefined ? (
+        <li>{frontmatter.linkFiveText}</li>
+      ) : null
+    }
   </ol>
-  <p>Quote of the Week: <q><i>{frontmatter.quote}</i></q></p>
-  <p>— {frontmatter.quote_author}</p>
   {
-    frontmatter.quote.bonus !== undefined ? (
-      <p>Bonus: {frontmatter.quote.bonus}</p>
+    frontmatter.weekContent !== undefined ? (
+      <p>{frontmatter.weekContent}</p>
     ) : null
   }
+  {frontmatter.bonus !== undefined ? <p>Bonus: {frontmatter.bonus}</p> : null}
   <slot />
 </BaseLayout>
